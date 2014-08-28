@@ -1,4 +1,4 @@
 ctf
 ===
 
-some ctf writeup
+Some ctf solutions
