@@ -1,4 +1,6 @@
+#5/17/2014
 import copy
+
 def get_score_list():
     score_list = []
     for z in range(3):          #24
@@ -38,6 +40,7 @@ def get_score_list():
 
 score_list = get_score_list()
 
+
 def convert_open_list(open_all):
     new_list = []
     for i in range(9):
@@ -52,6 +55,7 @@ def convert_open_list(open_all):
                 new_list.append((j[0],j[1],z))
     return new_list
 
+
 #state can be xlist, olist and openlist
 def minimax(xlis, olis, openlis): #return the next move (a tuple)
     max_val = -1000
@@ -64,6 +68,7 @@ def minimax(xlis, olis, openlis): #return the next move (a tuple)
             max_val = tmp
             best_move = move
     return best_move
+
 
 def min_value(state,depth):#return the difference of the score
     depth += 1
@@ -81,6 +86,7 @@ def min_value(state,depth):#return the difference of the score
             min_value = tmp
     return min_value
 
+
 def max_value(state,depth):#return the difference of the score
     depth += 1
     xlis = state[0]
@@ -97,6 +103,7 @@ def max_value(state,depth):#return the difference of the score
         if tmp > min_value:
             max_value = tmp
     return max_value
+
 
 def result(xlis,olis,openlis,move,player):
     openlis2 = copy.deepcopy(openlis)
@@ -134,8 +141,6 @@ def get_score(score_list,xlis,olis): #input:score_list + 2 lists of a tuples; re
 
     return (x_score,o_score)
     #print "scores ", x_score,o_score
-
-
 
 
 def get_pos_list(rows,sym): #tuple of 9 rows, sym is 'O' or 'X'
